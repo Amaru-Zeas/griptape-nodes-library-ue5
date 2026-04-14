@@ -1,0 +1,2 @@
+"""Media Store library package."""
+

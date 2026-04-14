@@ -1,0 +1,104 @@
+{
+    "name": "GTN LatLong Geo Library",
+    "library_schema_version": "0.1.0",
+    "metadata": {
+        "author": "Griptape Community",
+        "description": "Lat/long and place search node with Google Earth, Maps, and Street View outputs.",
+        "library_version": "0.1.0",
+        "engine_version": "0.66.0",
+        "tags": [
+            "Griptape",
+            "Maps",
+            "Google Earth",
+            "Street View",
+            "Latitude",
+            "Longitude"
+        ],
+        "dependencies": {
+            "pip_dependencies": [
+                "requests>=2.25.0",
+                "playwright"
+            ]
+        }
+    },
+    "settings": [
+        {
+            "description": "Google Maps API key used for geocoding place or street names",
+            "category": "app_events.on_app_initialization_complete",
+            "contents": {
+                "secrets_to_register": [
+                    "GOOGLE_MAPS_API_KEY"
+                ]
+            }
+        }
+    ],
+    "categories": [
+        {
+            "GeoExplorer": {
+                "color": "border-sky-500",
+                "title": "Geo Explorer",
+                "description": "Search places and preview Earth/Map/Street views",
+                "icon": "Search"
+            }
+        }
+    ],
+    "widgets": [
+        {
+            "name": "GeoExplorerWidget",
+            "path": "GeoExplorerWidget.js",
+            "description": "Interactive Earth/Map/Street viewer with simple search"
+        },
+        {
+            "name": "GeoExplorerLiteWidget",
+            "path": "GeoExplorerLiteWidget.js",
+            "description": "Simple satellite + photo view with Google Pegman control"
+        }
+    ],
+    "nodes": [
+        {
+            "class_name": "GeoExplorerNode",
+            "file_path": "geo_explorer_node.py",
+            "metadata": {
+                "category": "GeoExplorer",
+                "description": "Search by place or lat/lng and output Earth, Maps, and Street View URLs.",
+                "display_name": "Geo Explorer"
+            }
+        },
+        {
+            "class_name": "GeoExplorerCleanNode",
+            "file_path": "geo_explorer_clean_node.py",
+            "metadata": {
+                "category": "GeoExplorer",
+                "description": "Fresh clean Geo Explorer node with stable capture behavior.",
+                "display_name": "Geo Explorer Clean"
+            }
+        },
+        {
+            "class_name": "StreetViewCaptureNode",
+            "file_path": "street_view_capture.py",
+            "metadata": {
+                "category": "GeoExplorer",
+                "description": "Strict Street View static capture as ImageArtifact (no map fallback).",
+                "display_name": "Street View Capture"
+            }
+        },
+        {
+            "class_name": "StreetViewCaptureCleanNode",
+            "file_path": "street_view_capture_clean.py",
+            "metadata": {
+                "category": "GeoExplorer",
+                "description": "Clean minimal Street View capture with local captured_image output.",
+                "display_name": "Street View Capture Clean"
+            }
+        },
+        {
+            "class_name": "GeoExplorerLiteNode",
+            "file_path": "geo_explorer_lite_node.py",
+            "metadata": {
+                "category": "GeoExplorer",
+                "description": "Very simple satellite/photo explorer with capture.",
+                "display_name": "Geo Explorer Lite"
+            }
+        }
+    ]
+}

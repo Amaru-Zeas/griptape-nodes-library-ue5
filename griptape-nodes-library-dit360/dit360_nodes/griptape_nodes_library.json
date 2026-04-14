@@ -1,0 +1,65 @@
+{
+    "name": "GTN DiT360",
+    "library_schema_version": "0.1.0",
+    "metadata": {
+        "author": "Griptape Community",
+        "description": "GTN helper nodes for DiT360 panorama workflows with FLUX.1-dev.",
+        "library_version": "0.1.0",
+        "engine_version": "0.67.0",
+        "tags": [
+            "Griptape",
+            "DiT360",
+            "Flux",
+            "Panorama",
+            "360"
+        ],
+        "dependencies": {
+            "pip_dependencies": [
+                "numpy>=1.26.0",
+                "pillow>=10.0.0"
+            ]
+        }
+    },
+    "settings": [],
+    "categories": [
+        {
+            "DiT360": {
+                "color": "border-indigo-500",
+                "title": "DiT360",
+                "description": "FLUX.1-dev panorama helpers for GTN",
+                "icon": "Globe"
+            }
+        }
+    ],
+    "widgets": [],
+    "nodes": [
+        {
+            "class_name": "DiT360FluxDevPresetNode",
+            "file_path": "dit360_flux_dev_preset_node.py",
+            "metadata": {
+                "category": "DiT360",
+                "description": "Preset outputs for FLUX.1-dev + DiT360 LoRA configuration.",
+                "display_name": "DiT360 Flux Dev Preset"
+            }
+        },
+        {
+            "class_name": "Equirect360DimensionsNode",
+            "file_path": "equirect360_dimensions_node.py",
+            "metadata": {
+                "category": "DiT360",
+                "description": "Compute valid 2:1 equirectangular and latent-space dimensions.",
+                "display_name": "DiT360 Equirect Dimensions"
+            }
+        },
+        {
+            "class_name": "Equirect360EdgeBlenderNode",
+            "file_path": "equirect360_edge_blender_node.py",
+            "metadata": {
+                "category": "DiT360",
+                "description": "Blend panorama left/right edges for seamless wraparound.",
+                "display_name": "DiT360 Edge Blender"
+            }
+        }
+    ]
+}
+

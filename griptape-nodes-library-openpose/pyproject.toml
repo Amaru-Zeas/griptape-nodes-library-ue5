@@ -1,0 +1,9 @@
+[project]
+name = "griptape-nodes-library-openpose"
+version = "0.1.0"
+description = "3D OpenPose Editor for Griptape Nodes - Full-featured pose editing with skeleton manipulation, depth/normal maps, and image capture"
+authors = [
+    { name = "Griptape Community" }
+]
+requires-python = ">=3.11"
+dependencies = []

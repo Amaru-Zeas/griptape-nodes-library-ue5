@@ -1,0 +1,16 @@
+[project]
+name = "griptape-nodes-library-dit360"
+version = "0.1.0"
+description = "GTN DiT360 utility nodes for FLUX.1-dev panorama workflows"
+authors = [
+    { name = "Griptape Community" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=1.26.0",
+    "pillow>=10.0.0"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

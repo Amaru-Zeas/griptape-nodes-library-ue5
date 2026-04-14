@@ -1,0 +1,72 @@
+{
+    "name": "GTN Flow Denoise",
+    "library_schema_version": "0.1.0",
+    "metadata": {
+        "author": "Griptape Community",
+        "description": "Motion-compensated temporal denoising for image frame sequences using MEMFOF/RAFT flow alignment.",
+        "library_version": "0.1.0",
+        "engine_version": "0.67.0",
+        "tags": [
+            "Griptape",
+            "Video",
+            "Denoise",
+            "Optical Flow",
+            "MEMFOF",
+            "RAFT"
+        ],
+        "dependencies": {
+            "pip_dependencies": [
+                "numpy>=1.26.0",
+                "pillow>=10.0.0",
+                "requests>=2.31.0",
+                "av",
+                "opencv-python-headless",
+                "torch",
+                "torchvision",
+                "tqdm",
+                "memfof @ git+https://github.com/msu-video-group/memfof.git"
+            ]
+        }
+    },
+    "settings": [],
+    "categories": [
+        {
+            "FlowDenoise": {
+                "color": "border-emerald-500",
+                "title": "Flow Denoise",
+                "description": "Temporal denoising tools for frame sequences",
+                "icon": "Film"
+            }
+        }
+    ],
+    "widgets": [],
+    "nodes": [
+        {
+            "class_name": "TemporalFlowAverageNode",
+            "file_path": "flow_denoise_gtn_node.py",
+            "metadata": {
+                "category": "FlowDenoise",
+                "description": "Align neighboring frames with optical flow and compute a weighted temporal average.",
+                "display_name": "Temporal Flow Average"
+            }
+        },
+        {
+            "class_name": "ExtractNoiseNode",
+            "file_path": "flow_denoise_gtn_node.py",
+            "metadata": {
+                "category": "FlowDenoise",
+                "description": "Extract and visualize total, chroma, and luma noise from frame sequences.",
+                "display_name": "Extract Noise (Chroma/Luma)"
+            }
+        },
+        {
+            "class_name": "SelectiveDenoiseNode",
+            "file_path": "flow_denoise_gtn_node.py",
+            "metadata": {
+                "category": "FlowDenoise",
+                "description": "Blend original and clean frames with independent chroma/luma strength controls.",
+                "display_name": "Selective Denoise"
+            }
+        }
+    ]
+}

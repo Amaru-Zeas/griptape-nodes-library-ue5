@@ -1,0 +1,56 @@
+{
+  "name": "Media Store Library",
+  "library_schema_version": "0.1.0",
+  "metadata": {
+    "author": "Griptape Community",
+    "description": "Simple set/get key-value memory for text and media references.",
+    "library_version": "0.1.0",
+    "engine_version": "0.66.0",
+    "tags": [
+      "Griptape",
+      "Memory",
+      "Media",
+      "Set",
+      "Get"
+    ]
+  },
+  "settings": [],
+  "categories": [
+    {
+      "MediaStore": {
+        "color": "border-emerald-500",
+        "title": "Media Store",
+        "description": "Store and retrieve text/media by key",
+        "icon": "Database"
+      }
+    }
+  ],
+  "widgets": [
+    {
+      "name": "MediaStoreSelector",
+      "path": "MediaStoreSelector.js",
+      "description": "Dropdown selector for saved set keys"
+    }
+  ],
+  "nodes": [
+    {
+      "class_name": "MediaStoreSetNode",
+      "file_path": "media_store_set.py",
+      "metadata": {
+        "category": "MediaStore",
+        "description": "Save any text/image/video/audio input under a key.",
+        "display_name": "Media Store Set"
+      }
+    },
+    {
+      "class_name": "MediaStoreGetNode",
+      "file_path": "media_store_get.py",
+      "metadata": {
+        "category": "MediaStore",
+        "description": "Get saved value by key with dropdown of all saved keys.",
+        "display_name": "Media Store Get"
+      }
+    }
+  ]
+}
+

@@ -1,0 +1,16 @@
+[project]
+name = "griptape-nodes-library-ltx23"
+version = "0.1.0"
+description = "GTN LTX-2.3 generation library with runtime LoRA stacking"
+authors = [
+    { name = "Griptape Community" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "imageio[ffmpeg]>=2.37.0",
+    "huggingface_hub>=0.25.0"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

@@ -1,0 +1,74 @@
+{
+    "name": "GTN MiniMax Remover",
+    "library_schema_version": "0.1.0",
+    "metadata": {
+        "author": "Griptape Community",
+        "description": "Video object removal with MiniMax and Netflix VOID integrations, plus mask helper tools.",
+        "library_version": "0.4.0",
+        "engine_version": "0.67.0",
+        "tags": [
+            "Griptape",
+            "Video",
+            "Object Removal",
+            "MiniMax",
+            "SAM2",
+            "SAM3"
+        ],
+        "dependencies": {
+            "pip_dependencies": [
+                "imageio[ffmpeg]>=2.37.0",
+                "numpy>=1.26.0"
+            ]
+        }
+    },
+    "settings": [],
+    "categories": [
+        {
+            "VideoTools": {
+                "color": "border-red-500",
+                "title": "Video Tools",
+                "description": "Video masking and removal workflows",
+                "icon": "Film"
+            }
+        }
+    ],
+    "widgets": [],
+    "nodes": [
+        {
+            "class_name": "MiniMaxRemoverNode",
+            "file_path": "minimax_remover_node.py",
+            "metadata": {
+                "category": "VideoTools",
+                "description": "Remove masked objects from input video with local MiniMax model. Supports none/SAM2/SAM3(backlog) mask backends.",
+                "display_name": "MiniMax Remover"
+            }
+        },
+        {
+            "class_name": "MiniMaxRemoverNodeV2",
+            "file_path": "minimax_remover_node_v2.py",
+            "metadata": {
+                "category": "VideoTools",
+                "description": "Mask-input-only remover v2. Uses provided mask video and skips built-in segmentation.",
+                "display_name": "MiniMax Remover v2"
+            }
+        },
+        {
+            "class_name": "VoidRemoverNode",
+            "file_path": "void_remover_node.py",
+            "metadata": {
+                "category": "VideoTools",
+                "description": "Run Netflix VOID remover from local repo/checkpoint with auto quadmask conversion.",
+                "display_name": "VOID Remover"
+            }
+        },
+        {
+            "class_name": "AffectedMaskBuilderNode",
+            "file_path": "affected_mask_builder_node.py",
+            "metadata": {
+                "category": "VideoTools",
+                "description": "Generate affected-region mask video from a primary mask for richer VOID quadmask conditioning.",
+                "display_name": "Affected Mask Builder"
+            }
+        }
+    ]
+}

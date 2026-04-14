@@ -1,0 +1,89 @@
+{
+  "name": "Image Tiles Library",
+  "library_schema_version": "0.1.0",
+  "metadata": {
+    "author": "Griptape Community",
+    "description": "Basic image tiling nodes: split image into square tiles and merge them back.",
+    "library_version": "0.1.0",
+    "engine_version": "0.66.0",
+    "tags": [
+      "Griptape",
+      "Image",
+      "Tiles",
+      "Split",
+      "Merge"
+    ],
+    "dependencies": {
+      "pip_dependencies": [
+        "pillow>=10.0.0",
+        "numpy",
+        "requests"
+      ]
+    }
+  },
+  "settings": [],
+  "categories": [
+    {
+      "ImageTiles": {
+        "color": "border-cyan-500",
+        "title": "Image Tiles",
+        "description": "Split images into square tiles and merge tiles back.",
+        "icon": "Grid"
+      }
+    }
+  ],
+  "widgets": [
+    {
+      "name": "Image360ViewerWidget",
+      "path": "Image360ViewerWidget.js",
+      "description": "Simple equirectangular 360 image viewer with mouse controls."
+    }
+  ],
+  "nodes": [
+    {
+      "class_name": "ImageTileSplitterNode",
+      "file_path": "image_tile_splitter.py",
+      "metadata": {
+        "category": "ImageTiles",
+        "description": "Split an image into square PNG tiles and emit a manifest JSON.",
+        "display_name": "Image Tile Splitter"
+      }
+    },
+    {
+      "class_name": "ImageTileMergerNode",
+      "file_path": "image_tile_merger.py",
+      "metadata": {
+        "category": "ImageTiles",
+        "description": "Merge tiles from a splitter manifest back into one image.",
+        "display_name": "Image Tile Merger"
+      }
+    },
+    {
+      "class_name": "Image360ViewerNode",
+      "file_path": "image_360_viewer_node.py",
+      "metadata": {
+        "category": "ImageTiles",
+        "description": "Preview equirectangular images in an interactive 360 spherical viewer.",
+        "display_name": "360 Image Viewer"
+      }
+    },
+    {
+      "class_name": "SeamBlend360Node",
+      "file_path": "seam_blend_360_node.py",
+      "metadata": {
+        "category": "ImageTiles",
+        "description": "Blend panorama left/right seam with optional seam blur.",
+        "display_name": "360 Seam Blend"
+      }
+    },
+    {
+      "class_name": "ToLatLong2to1Node",
+      "file_path": "to_latlong_2to1_node.py",
+      "metadata": {
+        "category": "ImageTiles",
+        "description": "Convert regular image to 2:1 canvas for latlong workflows.",
+        "display_name": "To LatLong 2:1"
+      }
+    }
+  ]
+}

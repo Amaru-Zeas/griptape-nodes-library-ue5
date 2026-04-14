@@ -1,0 +1,87 @@
+{
+    "name": "OpenPose 3D Editor Library",
+    "library_schema_version": "0.1.0",
+    "metadata": {
+        "author": "Griptape Community",
+        "description": "Full-featured 3D OpenPose skeleton editor for Griptape Nodes — interactive pose editing, body parameter adjustment, depth/normal maps, image capture, and ControlNet export",
+        "library_version": "0.1.0",
+        "engine_version": "0.66.0",
+        "tags": [
+            "Griptape",
+            "OpenPose",
+            "3D Editor",
+            "Pose",
+            "ControlNet",
+            "Skeleton",
+            "Depth Map",
+            "Normal Map"
+        ],
+        "dependencies": {
+            "pip_dependencies": []
+        }
+    },
+    "settings": [],
+    "categories": [
+        {
+            "PoseEditor": {
+                "color": "border-pink-500",
+                "title": "Pose Editor",
+                "description": "Interactive 3D OpenPose skeleton editor with full manipulation tools",
+                "icon": "User"
+            }
+        },
+        {
+            "PoseTools": {
+                "color": "border-purple-500",
+                "title": "Pose Tools",
+                "description": "Utilities for saving, loading, and converting pose data",
+                "icon": "Wrench"
+            }
+        }
+    ],
+    "widgets": [
+        {
+            "name": "OpenPose3DEditor",
+            "path": "OpenPose3DEditor.js",
+            "description": "Full 3D OpenPose skeleton editor with joint rotation, body parameters, presets, capture, depth/normal maps, save/load, and undo/redo"
+        }
+    ],
+    "nodes": [
+        {
+            "class_name": "PoseEditorNode",
+            "file_path": "pose_editor_node.py",
+            "metadata": {
+                "category": "PoseEditor",
+                "description": "Interactive 3D OpenPose skeleton editor — pose a human figure with full joint manipulation, body parameters, presets, and image capture.",
+                "display_name": "OpenPose 3D Editor"
+            }
+        },
+        {
+            "class_name": "SavePoseImage",
+            "file_path": "save_pose_image.py",
+            "metadata": {
+                "category": "PoseTools",
+                "description": "Save a captured pose image, depth map, or normal map to a PNG file.",
+                "display_name": "Save Pose Image"
+            }
+        },
+        {
+            "class_name": "LoadPoseScene",
+            "file_path": "load_pose.py",
+            "metadata": {
+                "category": "PoseTools",
+                "description": "Load a previously saved pose scene from a JSON file.",
+                "display_name": "Load Pose Scene"
+            }
+        },
+        {
+            "class_name": "PoseToControlNet",
+            "file_path": "pose_to_controlnet.py",
+            "metadata": {
+                "category": "PoseTools",
+                "description": "Convert 3D OpenPose joints to 2D format for ControlNet — projects to front/side/top view with proper OpenPose JSON output.",
+                "display_name": "Pose to ControlNet"
+            }
+        }
+    ]
+}

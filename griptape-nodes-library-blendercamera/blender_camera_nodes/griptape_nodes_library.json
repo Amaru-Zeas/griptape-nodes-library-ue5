@@ -1,0 +1,97 @@
+{
+    "name": "Blender Camera Control Library",
+    "library_schema_version": "0.1.0",
+    "metadata": {
+        "author": "Griptape Community",
+        "description": "Blender camera control bridge for Griptape Nodes with optional live viewport embedding.",
+        "library_version": "0.1.0",
+        "engine_version": "0.66.0",
+        "tags": [
+            "Griptape",
+            "Blender",
+            "Camera",
+            "Viewport",
+            "Remote Control"
+        ],
+        "dependencies": {
+            "pip_dependencies": [
+                "requests>=2.25.0"
+            ]
+        }
+    },
+    "settings": [],
+    "categories": [
+        {
+            "BlenderCamera": {
+                "color": "border-indigo-500",
+                "title": "Blender Camera",
+                "description": "Connect to Blender and control camera transforms",
+                "icon": "Camera"
+            }
+        }
+    ],
+    "widgets": [
+        {
+            "name": "BlenderViewport",
+            "path": "BlenderViewport.js",
+            "description": "Embed a live stream URL for Blender viewport preview"
+        },
+        {
+            "name": "BlenderInteractiveRemote",
+            "path": "BlenderInteractiveRemote.js",
+            "description": "Embed an interactive remote Blender session URL"
+        },
+        {
+            "name": "BlenderCameraViewport",
+            "path": "BlenderCameraViewport.js",
+            "description": "Camera dropdown + viewport snapshot preview"
+        }
+    ],
+    "nodes": [
+        {
+            "class_name": "BlenderConnect",
+            "file_path": "blender_connect.py",
+            "metadata": {
+                "category": "BlenderCamera",
+                "description": "Test connection to a Blender HTTP bridge server.",
+                "display_name": "Blender Connect"
+            }
+        },
+        {
+            "class_name": "BlenderCameraControl",
+            "file_path": "blender_camera_control.py",
+            "metadata": {
+                "category": "BlenderCamera",
+                "description": "Get/set Blender camera location and rotation.",
+                "display_name": "Blender Camera Control"
+            }
+        },
+        {
+            "class_name": "BlenderViewportNode",
+            "file_path": "blender_viewport.py",
+            "metadata": {
+                "category": "BlenderCamera",
+                "description": "Embed a live stream URL for Blender viewport monitoring.",
+                "display_name": "Blender Viewport"
+            }
+        },
+        {
+            "class_name": "BlenderInteractiveRemoteNode",
+            "file_path": "blender_interactive_remote.py",
+            "metadata": {
+                "category": "BlenderCamera",
+                "description": "Embed an interactive remote UI session (keyboard + mouse).",
+                "display_name": "Blender Interactive Remote"
+            }
+        },
+        {
+            "class_name": "BlenderCameraViewportCapture",
+            "file_path": "blender_camera_viewport_capture.py",
+            "metadata": {
+                "category": "BlenderCamera",
+                "description": "Pick a camera and capture current viewport image (fast OpenGL snapshot).",
+                "display_name": "Blender Camera View Capture"
+            }
+        }
+    ]
+}

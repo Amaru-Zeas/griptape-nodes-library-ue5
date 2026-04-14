@@ -1,0 +1,71 @@
+{
+    "name": "GTN Video Edit Tools",
+    "library_schema_version": "0.1.0",
+    "metadata": {
+        "author": "Griptape Community",
+        "description": "Video editing utility nodes for frame extraction, blending, and color transfer.",
+        "library_version": "0.9.0",
+        "engine_version": "0.66.0",
+        "tags": [
+            "Griptape",
+            "Video",
+            "Frame Extraction",
+            "Widget",
+            "Editor"
+        ],
+        "dependencies": {
+            "pip_dependencies": [
+                "imageio[ffmpeg]>=2.37.0",
+                "numpy>=1.26.0",
+                "color-matcher"
+            ]
+        }
+    },
+    "settings": [],
+    "categories": [
+        {
+            "VideoTools": {
+                "color": "border-cyan-500",
+                "title": "Video Tools",
+                "description": "Frame-by-frame video utilities",
+                "icon": "Film"
+            }
+        }
+    ],
+    "widgets": [
+        {
+            "name": "VideoFrameEditorWidgetForceV4",
+            "path": "VideoFrameEditorWidgetV4.js",
+            "description": "force-v4 cache bust entrypoint with extract nonce updates."
+        }
+    ],
+    "nodes": [
+        {
+            "class_name": "VideoFrameEditorNodeV3",
+            "file_path": "video_frame_editor_node.py",
+            "metadata": {
+                "category": "VideoTools",
+                "description": "Frame editor with staticfiles-backed extracted image, path, and URL outputs.",
+                "display_name": "Video Frame Editor v5"
+            }
+        },
+        {
+            "class_name": "VideoBlendNode",
+            "file_path": "video_blend_node.py",
+            "metadata": {
+                "category": "VideoTools",
+                "description": "Blend two videos with simple modes and output one video.",
+                "display_name": "Video Blend"
+            }
+        },
+        {
+            "class_name": "VideoColorMatchNode",
+            "file_path": "video_color_match_node.py",
+            "metadata": {
+                "category": "VideoTools",
+                "description": "Transfer color from a reference video to a target video.",
+                "display_name": "Video Color Match"
+            }
+        }
+    ]
+}

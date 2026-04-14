@@ -1,0 +1,73 @@
+{
+    "name": "GTN LTX-2.3",
+    "library_schema_version": "0.1.0",
+    "metadata": {
+        "author": "Griptape Community",
+        "description": "LTX-2.3 local generation with GTN-ready controls and multi-LoRA stack support.",
+        "library_version": "0.1.0",
+        "engine_version": "0.67.0",
+        "tags": [
+            "Griptape",
+            "Video",
+            "LTX",
+            "LTX-2.3",
+            "LoRA"
+        ],
+        "dependencies": {
+            "pip_dependencies": [
+                "imageio[ffmpeg]>=2.37.0",
+                "huggingface_hub>=0.25.0"
+            ]
+        }
+    },
+    "settings": [],
+    "categories": [
+        {
+            "LTX23": {
+                "color": "border-violet-500",
+                "title": "LTX-2.3",
+                "description": "LTX local generation + LoRA controls",
+                "icon": "Film"
+            }
+        }
+    ],
+    "widgets": [],
+    "nodes": [
+        {
+            "class_name": "LTX23DefaultsNode",
+            "file_path": "ltx23_defaults_node.py",
+            "metadata": {
+                "category": "LTX23",
+                "description": "Starter defaults for LTX-2.3 model, module, and quality controls.",
+                "display_name": "LTX-2.3 Defaults"
+            }
+        },
+        {
+            "class_name": "LTX23LoraStackNode",
+            "file_path": "ltx23_lora_stack_node.py",
+            "metadata": {
+                "category": "LTX23",
+                "description": "Build a JSON LoRA stack payload from up to 4 LoRA slots.",
+                "display_name": "LTX-2.3 LoRA Stack Builder"
+            }
+        },
+        {
+            "class_name": "LTX23ModelDownloaderNode",
+            "file_path": "ltx23_model_downloader_node.py",
+            "metadata": {
+                "category": "LTX23",
+                "description": "Download LTX-2.3 checkpoints/upsamplers/LoRAs into a local models folder.",
+                "display_name": "LTX-2.3 Model Downloader"
+            }
+        },
+        {
+            "class_name": "LTX23GenerateNode",
+            "file_path": "ltx23_generate_node.py",
+            "metadata": {
+                "category": "LTX23",
+                "description": "Run LTX pipelines locally (two-stage/HQ/distilled) with stacked LoRAs.",
+                "display_name": "LTX-2.3 Generate"
+            }
+        }
+    ]
+}
