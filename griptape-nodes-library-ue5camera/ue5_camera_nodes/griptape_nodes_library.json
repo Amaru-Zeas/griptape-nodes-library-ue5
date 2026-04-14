@@ -1,0 +1,53 @@
+{
+    "name": "UE5 Camera Control Library",
+    "library_schema_version": "0.1.0",
+    "metadata": {
+        "author": "Griptape Community",
+        "description": "Live UE5 viewport via Pixel Streaming with screenshot capture.",
+        "library_version": "0.8.0",
+        "engine_version": "0.66.0",
+        "tags": [
+            "Griptape",
+            "Unreal Engine",
+            "UE5",
+            "Camera",
+            "Pixel Streaming",
+            "Viewport",
+            "Screenshot"
+        ],
+        "dependencies": {
+            "pip_dependencies": [
+                "requests>=2.25.0"
+            ]
+        }
+    },
+    "settings": [],
+    "categories": [
+        {
+            "UE5Camera": {
+                "color": "border-indigo-500",
+                "title": "UE5 Camera",
+                "description": "Live UE5 viewport and camera control",
+                "icon": "Camera"
+            }
+        }
+    ],
+    "widgets": [
+        {
+            "name": "UE5ViewportV2",
+            "path": "UE5ViewportV2.js",
+            "description": "Live UE5 viewport via Pixel Streaming with screenshot capture"
+        }
+    ],
+    "nodes": [
+        {
+            "class_name": "UE5Viewport",
+            "file_path": "ue5_viewport.py",
+            "metadata": {
+                "category": "UE5Camera",
+                "description": "Live UE5 viewport with screenshot capture. See and navigate UE5 directly inside this node.",
+                "display_name": "UE5 Viewport"
+            }
+        }
+    ]
+}

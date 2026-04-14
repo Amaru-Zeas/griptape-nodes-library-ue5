@@ -1,0 +1,19 @@
+/ComfyUI-Blender
+/COMFY_temp
+/from CJ
+/griptape-nodes-library-blendercamera
+/griptape-nodes-library-cinemawidget
+/griptape-nodes-library-dit360
+/griptape-nodes-library-flow-denoise
+/griptape-nodes-library-gtn-video-edit-tools
+/griptape-nodes-library-image-tiles
+/griptape-nodes-library-latlong
+/griptape-nodes-library-ltx23
+/griptape-nodes-library-media-store
+/griptape-nodes-library-minimax-remover
+/griptape-nodes-library-openpose
+/griptape-nodes-library-sketchfab
+/LTX-2
+/models
+/run_blender_bridge.py
+/sd-webui-3d-open-pose-editor
