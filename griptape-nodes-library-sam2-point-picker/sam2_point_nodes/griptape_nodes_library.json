@@ -1,0 +1,53 @@
+{
+    "name": "SAM2 Point Picker Library",
+    "library_schema_version": "0.1.0",
+    "metadata": {
+        "author": "Griptape Community",
+        "description": "Interactive point-based segmentation with SAM2.",
+        "library_version": "0.1.0",
+        "engine_version": "0.67.0",
+        "tags": [
+            "Griptape",
+            "SAM2",
+            "Segmentation",
+            "Mask"
+        ],
+        "dependencies": {
+            "pip_dependencies": [
+                "numpy>=1.26.0",
+                "pillow>=10.0.0",
+                "huggingface-hub>=0.23.0",
+                "sam2>=1.1.0"
+            ]
+        }
+    },
+    "settings": [],
+    "categories": [
+        {
+            "SAM2Segmentation": {
+                "color": "border-emerald-500",
+                "title": "SAM2 Segmentation",
+                "description": "Point-driven segmentation tools",
+                "icon": "MousePointerClick"
+            }
+        }
+    ],
+    "widgets": [
+        {
+            "name": "Sam2PointPickerWidget",
+            "path": "Sam2PointPickerWidget.js",
+            "description": "Interactive positive/negative point picker for SAM2 segmentation."
+        }
+    ],
+    "nodes": [
+        {
+            "class_name": "Sam2PointSegmenterNode",
+            "file_path": "sam2_point_segmenter_node.py",
+            "metadata": {
+                "category": "SAM2Segmentation",
+                "description": "Segment image regions by artist-selected positive/negative points using SAM2.",
+                "display_name": "Image Mask via Point Picker + SAM2"
+            }
+        }
+    ]
+}

@@ -1,0 +1,51 @@
+{
+    "name": "Hawk Anamorphic Library",
+    "library_schema_version": "0.1.0",
+    "metadata": {
+        "author": "Griptape Community",
+        "description": "Hawk-inspired anamorphic post look with lens profile controls.",
+        "library_version": "0.1.0",
+        "engine_version": "0.67.0",
+        "tags": [
+            "Griptape",
+            "Anamorphic",
+            "Lens",
+            "Post"
+        ],
+        "dependencies": {
+            "pip_dependencies": [
+                "numpy>=1.26.0",
+                "pillow>=10.0.0"
+            ]
+        }
+    },
+    "settings": [],
+    "categories": [
+        {
+            "Anamorphic": {
+                "color": "border-amber-500",
+                "title": "Anamorphic",
+                "description": "Hawk-style anamorphic finishing look",
+                "icon": "Aperture"
+            }
+        }
+    ],
+    "widgets": [
+        {
+            "name": "HawkAnamorphicWidget",
+            "path": "HawkAnamorphicWidget.js",
+            "description": "Interactive control panel for Hawk-style lens finishing."
+        }
+    ],
+    "nodes": [
+        {
+            "class_name": "HawkAnamorphicNode",
+            "file_path": "hawk_anamorphic_node.py",
+            "metadata": {
+                "category": "Anamorphic",
+                "description": "Apply a Hawk-style anamorphic look to an image file path.",
+                "display_name": "Hawk Anamorphic Look"
+            }
+        }
+    ]
+}

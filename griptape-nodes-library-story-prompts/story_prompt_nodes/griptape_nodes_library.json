@@ -1,0 +1,50 @@
+{
+    "name": "Story Prompt Library",
+    "library_schema_version": "0.1.0",
+    "metadata": {
+        "author": "Griptape Community",
+        "description": "Story Pipeline prompt browser with dropdown and refresh button.",
+        "library_version": "0.1.0",
+        "engine_version": "0.67.0",
+        "tags": [
+            "Griptape",
+            "Story",
+            "Prompt",
+            "Pipeline"
+        ],
+        "dependencies": {
+            "pip_dependencies": [
+                "requests>=2.25.0"
+            ]
+        }
+    },
+    "settings": [],
+    "categories": [
+        {
+            "StoryPrompt": {
+                "color": "border-fuchsia-500",
+                "title": "Story Prompt",
+                "description": "Browse recent prompts from Story Pipeline",
+                "icon": "MessageSquare"
+            }
+        }
+    ],
+    "widgets": [
+        {
+            "name": "StoryPromptPickerWidget",
+            "path": "StoryPromptPickerWidget.js",
+            "description": "Dropdown prompt selector with refresh button"
+        }
+    ],
+    "nodes": [
+        {
+            "class_name": "StoryPromptSelectorNode",
+            "file_path": "story_prompt_selector_node.py",
+            "metadata": {
+                "category": "StoryPrompt",
+                "description": "Fetch /api/prompts, select a prompt, and output prompt text.",
+                "display_name": "Story Prompt Selector"
+            }
+        }
+    ]
+}

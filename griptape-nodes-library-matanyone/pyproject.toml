@@ -1,0 +1,25 @@
+[project]
+name = "matanyone_nodes"
+version = "0.1.0"
+description = "Griptape Nodes library for MatAnyone video matting with auto model download"
+authors = [
+    {name = "Griptape Community", email = "community@griptape.ai"}
+]
+readme = "README.md"
+requires-python = "~=3.12"
+dependencies = [
+    "griptape-nodes",
+    "huggingface-hub>=0.23.0",
+    "matanyone @ git+https://github.com/pq-yang/MatAnyone",
+    "numpy>=1.26.0",
+    "opencv-python>=4.8.0",
+    "pillow>=10.0.0",
+    "sam2>=1.1.0",
+]
+
+[tool.uv.sources]
+griptape-nodes = { git = "https://github.com/griptape-ai/griptape-nodes", rev="latest"}
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

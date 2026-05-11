@@ -1,0 +1,67 @@
+{
+    "name": "MatAnyone Library",
+    "library_schema_version": "0.1.0",
+    "metadata": {
+        "author": "Griptape Community",
+        "description": "Stable video matting with MatAnyone and hardwired model loading.",
+        "library_version": "0.1.0",
+        "engine_version": "0.67.0",
+        "tags": [
+            "Griptape",
+            "Video",
+            "Matting",
+            "MatAnyone"
+        ],
+        "dependencies": {
+            "pip_dependencies": [
+                "huggingface-hub>=0.23.0",
+                "matanyone @ git+https://github.com/pq-yang/MatAnyone",
+                "numpy>=1.26.0",
+                "opencv-python>=4.8.0",
+                "pillow>=10.0.0",
+                "sam2>=1.1.0"
+            ]
+        }
+    },
+    "settings": [],
+    "categories": [
+        {
+            "VideoMatting": {
+                "color": "border-cyan-500",
+                "title": "Video Matting",
+                "description": "Video foreground/alpha extraction tools",
+                "icon": "Film"
+            }
+        }
+    ],
+    "widgets": [],
+    "nodes": [
+        {
+            "class_name": "MatAnyoneVideoMatteNode",
+            "file_path": "matanyone_video_matte_node.py",
+            "metadata": {
+                "category": "VideoMatting",
+                "description": "Run MatAnyone with fixed model wiring and automatic model download.",
+                "display_name": "MatAnyone Video Matte (Auto Model)"
+            }
+        },
+        {
+            "class_name": "MatAnyoneAutoMaskNode",
+            "file_path": "matanyone_auto_mask_node.py",
+            "metadata": {
+                "category": "VideoMatting",
+                "description": "Generate first-frame mask from video using hardwired SAM2 auto setup.",
+                "display_name": "MatAnyone First-Frame Mask (SAM2 Auto)"
+            }
+        },
+        {
+            "class_name": "MatAnyoneOneClickNode",
+            "file_path": "matanyone_oneclick_node.py",
+            "metadata": {
+                "category": "VideoMatting",
+                "description": "One-click SAM2 first-frame mask + MatAnyone video matting with hardwired models.",
+                "display_name": "MatAnyone One-Click Matte"
+            }
+        }
+    ]
+}

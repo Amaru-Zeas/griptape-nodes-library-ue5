@@ -1,0 +1,20 @@
+[project]
+name = "story_prompt_nodes"
+version = "0.1.0"
+description = "Griptape Nodes library for browsing and outputting Story Pipeline prompts"
+authors = [
+    {name = "Griptape Community", email = "community@griptape.ai"}
+]
+readme = "README.md"
+requires-python = "~=3.12"
+dependencies = [
+    "griptape-nodes",
+    "requests>=2.25.0",
+]
+
+[tool.uv.sources]
+griptape-nodes = { git = "https://github.com/griptape-ai/griptape-nodes", rev="latest"}
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
