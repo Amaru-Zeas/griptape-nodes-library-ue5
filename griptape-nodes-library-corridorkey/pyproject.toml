@@ -1,0 +1,20 @@
+[project]
+name = "corridorkey_nodes"
+version = "0.1.0"
+description = "Griptape Nodes library for CorridorKey with built-in model auto-download"
+authors = [
+    {name = "Griptape Community", email = "community@griptape.ai"}
+]
+readme = "README.md"
+requires-python = "~=3.12"
+dependencies = [
+    "griptape-nodes",
+    "corridorkey @ git+https://github.com/nikopueringer/CorridorKey.git",
+]
+
+[tool.uv.sources]
+griptape-nodes = { git = "https://github.com/griptape-ai/griptape-nodes", rev="latest" }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

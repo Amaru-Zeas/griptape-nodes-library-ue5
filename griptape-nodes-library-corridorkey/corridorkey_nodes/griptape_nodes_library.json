@@ -1,0 +1,44 @@
+{
+    "name": "CorridorKey Library",
+    "library_schema_version": "0.1.0",
+    "metadata": {
+        "author": "Griptape Community",
+        "description": "CorridorKey green/blue screen keying with built-in model auto-download.",
+        "library_version": "0.1.0",
+        "engine_version": "0.67.0",
+        "tags": [
+            "Griptape",
+            "Video",
+            "Chroma Key",
+            "CorridorKey"
+        ],
+        "dependencies": {
+            "pip_dependencies": [
+                "corridorkey @ git+https://github.com/nikopueringer/CorridorKey.git"
+            ]
+        }
+    },
+    "settings": [],
+    "categories": [
+        {
+            "Keying": {
+                "color": "border-emerald-500",
+                "title": "Keying",
+                "description": "Neural green/blue screen extraction tools",
+                "icon": "Scissors"
+            }
+        }
+    ],
+    "widgets": [],
+    "nodes": [
+        {
+            "class_name": "CorridorKeyInferenceNode",
+            "file_path": "corridorkey_inference_node.py",
+            "metadata": {
+                "category": "Keying",
+                "description": "Run CorridorKey inference on one clip folder with auto model download.",
+                "display_name": "CorridorKey Inference (Auto Model)"
+            }
+        }
+    ]
+}
