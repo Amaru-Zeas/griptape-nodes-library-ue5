@@ -65,7 +65,7 @@ class CorridorKeyInferenceNode(DataNode):
                 input_types=["str"],
                 type="str",
                 default_value="",
-                tooltip="Optional parent folder for generated run output in direct input mode.",
+                tooltip="Optional parent folder for generated run output in direct input mode. Defaults to Griptape output workspace folder.",
                 allowed_modes={ParameterMode.INPUT, ParameterMode.PROPERTY},
             )
         )
@@ -305,6 +305,15 @@ class CorridorKeyInferenceNode(DataNode):
                 suffix = text[idx + len(token) :].lstrip("/\\")
                 return [root / suffix for root in roots]
         return []
+
+    @staticmethod
+    def _default_output_parent_dir() -> Path:
+        base = CorridorKeyInferenceNode._griptape_nodes_base_dir()
+        preferred = [base / "outputs", base / "Output"]
+        for candidate in preferred:
+            if candidate.exists():
+                return candidate
+        return preferred[0]
 
     def _download_url_to_cache(self, url: str, label: str) -> Path:
         cache_dir = Path(tempfile.gettempdir()) / "corridorkey_node_cache"
@@ -588,7 +597,7 @@ class CorridorKeyInferenceNode(DataNode):
                 input_path = self._resolve_to_local_path(input_raw, "input_path")
                 alpha_ref = self._extract_reference_text(alpha_raw)
                 alpha_path = self._resolve_to_local_path(alpha_raw, "alpha_hint_path") if alpha_ref else None
-                output_parent = Path(output_parent_text) if output_parent_text else input_path.parent
+                output_parent = Path(output_parent_text) if output_parent_text else self._default_output_parent_dir()
                 run_root = output_parent / f"{input_path.stem}_corridorkey_run"
                 run_root.mkdir(parents=True, exist_ok=True)
         except Exception as exc:
